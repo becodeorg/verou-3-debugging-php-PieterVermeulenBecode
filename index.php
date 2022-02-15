@@ -49,36 +49,36 @@ new_exercise(4);
 // // Look up whats going wrong with this code, and then fix it
 // // Bonus: can you fix it with changing just one character? (hard)
 
-foreach($week as $day)
+foreach($week as &$day)
 {
     $day = substr($day, 0, -3);
+    
 }
-
-print_r($day);
+print_r($week);
 
 new_exercise(5);
-// // === Exercise 5 ===
-// // The result should be: "Copyright © <current year> - BeCode"
-// function copyright(int $year)
-// {
-//     return "&copy; $year BeCode";
-// }
-// //print the copyright
-// copyright(date('Y'));
+// === Exercise 5 ===
+// The result should be: "Copyright © <current year> - BeCode"
+function copyright(int $year)
+{
+    return "Copyright &copy; $year - BeCode";
+}
+//print the copyright
+echo copyright(date('Y'));
 
-// new_exercise(6);
-// // === Exercise 6 ===
-// // The array should be printing every letter of the alphabet (a-z)
-// // Fix the code so the for loop pushes each letter of the alphabet in the array
+new_exercise(6);
+// === Exercise 6 ===
+// The array should be printing every letter of the alphabet (a-z)
+// Fix the code so the for loop pushes each letter of the alphabet in the array
 
-// $arr = [];
-// for ($i = 0; $letter; $i++) {
-//     array_push($arr, $letter);
-// }
+$arr = [];
+for ($i = 0; $letter; $i++) {
+    array_push($arr, $letter);
+}
 
-// print_r($arr); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alphabetical array
+print_r($arr); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alphabetical array
 
-// new_exercise(7);
+new_exercise(7);
 // // === Exercise 7 ===
 // // Have the result of the function say: "Welcome John Smith" or "No access"
 // // Depending on the given information.
