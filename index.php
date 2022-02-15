@@ -61,66 +61,70 @@ new_exercise(5);
 // The result should be: "Copyright © <current year> - BeCode"
 function copyright(int $year)
 {
-    return "Copyright &copy; $year - BeCode";
+    echo "Copyright &copy; $year - BeCode";
 }
 //print the copyright
-echo copyright(date('Y'));
+ copyright(date('Y'));
 
 new_exercise(6);
 // === Exercise 6 ===
 // The array should be printing every letter of the alphabet (a-z)
 // Fix the code so the for loop pushes each letter of the alphabet in the array
-
+$letter=range('a', 'z');
 $arr = [];
-for ($i = 0; $letter; $i++) {
-    array_push($arr, $letter);
+for ($i = 0; $i<count($letter); $i++) {
+    array_push($arr, $letter[$i]);
 }
 
 print_r($arr); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alphabetical array
 
 new_exercise(7);
-// // === Exercise 7 ===
-// // Have the result of the function say: "Welcome John Smith" or "No access"
-// // Depending on the given information.
-// function login(string $email, string $password)
-// {
-//     if($email == 'john@example.be' || $password == 'pocahontas') {
-//         return 'Welcome John';
-//         return ' Smith';
-//     }
-//     return 'No access';
-// }
-// /* do not change any code below */
-// //should greet the user with his full name (John Smith)
-// echo login('john@example.be', 'pocahontas');
-// //Should say: no access
-// echo login('john@example.be', 'dfgidfgdfg');
-// //Should say: no access
-// echo login('wrong@example', 'wrong');
-// /* You can change code again */
+// === Exercise 7 ===
+// Have the result of the function say: "Welcome John Smith" or "No access"
+// Depending on the given information.
+function login(string $email, string $password)
+{
+    if($email == 'john@example.be' && $password == 'pocahontas') {
+        return 'Welcome John Smith ';
+        
+    }else
+    {
+    return ' No access';
+    }
 
-// new_exercise(8);
-// // === Exercise 8 ===
-// // Check if the link is containing one of the below parts and respond with the correct message
-// function isLinkValid(string $link)
-// {
-//     $unacceptables = array('https:','.doc','.pdf', '.jpg', '.jpeg', '.gif', '.bmp', '.png');
 
-//     foreach ($unacceptables as $unacceptable) {
-//         if (strpos($link, $unacceptable) == true) {
-//             return 'Unacceptable Found<br />';
-//         }
-//     }
-//     return 'Acceptable<br />';
-// }
-// //invalid link
-// isLinkValid('http://www.google.com/hack.pdf');
-// //invalid link
-// isLinkValid('https://google.com');
-// //VALID link
-// isLinkValid('http://google.com');
-// //VALID link
-// isLinkValid('http://google.com/test.txt');
+}
+/* do not change any code below */
+//should greet the user with his full name (John Smith)
+echo login('john@example.be', 'pocahontas');
+//Should say: no access
+echo login('john@example.be', 'dfgidfgdfg');
+//Should say: no access
+echo login('wrong@example', 'wrong');
+/* You can change code again */
+
+new_exercise(8);
+// === Exercise 8 ===
+// Check if the link is containing one of the below parts and respond with the correct message
+function isLinkValid(string $link)
+{
+    $unacceptables = array('https:','.doc','.pdf', '.jpg', '.jpeg', '.gif', '.bmp', '.png');
+
+    foreach ($unacceptables as $unacceptable) {
+        if (strpos($link, $unacceptable) == true) {
+            return 'Unacceptable Found<br />';
+        }
+    }
+    return 'Acceptable<br />';
+}
+//invalid link
+isLinkValid('http://www.google.com/hack.pdf');
+//invalid link
+isLinkValid('https://google.com');
+//VALID link
+isLinkValid('http://google.com');
+//VALID link
+isLinkValid('http://google.com/test.txt');
 
 // new_exercise(9);
 // // === Exercise 9 ===
